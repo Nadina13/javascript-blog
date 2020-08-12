@@ -39,9 +39,8 @@
     const targetArticle = document.querySelector(articleSelector);
 
     /* add class 'active' to the correct article */
-
     targetArticle.classList.add('active');
-  }
+  };
 
   const optArticleSelector = '.post',
     optTitleSelector = '.post-title',
@@ -81,10 +80,8 @@
         link.addEventListener('click', titleClickHandler);
       }
     }
-
     titleList.innerHTML = html;
   }
-
   generateTitleLinks();
 
   function generateTags(){
@@ -95,7 +92,8 @@
     for (let article of articles) {
 
       /* find tags wrapper */
-      const tagsList = article.querySelector(optArticleTagsSelector).innerHTML=''; 
+      const tagsList = article.querySelector(optArticleTagsSelector); 
+      console.log(tagsList);
 
       /* make html variable with empty string */
       let html = '';
@@ -116,12 +114,12 @@
         /* add generated code to html variable */
   
       /* END LOOP: for each tag */
-       
+      }
       /* insert HTML of all the links into the tags wrapper */
   
     /* END LOOP: for every article: */
-    
+    }
   }
-  
   generateTags();
+
 }

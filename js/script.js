@@ -80,11 +80,13 @@
         link.addEventListener('click', titleClickHandler);
       }
     }
+
     titleList.innerHTML = html;
   }
+
   generateTitleLinks();
 
-  function generateTags(){
+  function generateTags() {
     /* find all articles */
     const articles = document.querySelectorAll(optArticleSelector);
 
@@ -92,7 +94,7 @@
     for (let article of articles) {
 
       /* find tags wrapper */
-      const tagsList = article.querySelector(optArticleTagsSelector); 
+      const tagsList = article.querySelector(optArticleTagsSelector);
       console.log(tagsList);
 
       /* make html variable with empty string */
@@ -107,19 +109,19 @@
       console.log(articleTagsArray);
 
       /* START LOOP: for each tag */
-      for(let tag of articleTagsArray){
-        
+      for (let tag of articleTagsArray) {
+
         /* generate HTML of the link */
-  
+
         /* add generated code to html variable */
-  
-      /* END LOOP: for each tag */
+
+        /* END LOOP: for each tag */
       }
+
       /* insert HTML of all the links into the tags wrapper */
-  
-    /* END LOOP: for every article: */
+
+      /* END LOOP: for every article: */
     }
   }
   generateTags();
-
 }

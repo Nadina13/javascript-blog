@@ -29,6 +29,7 @@
 
     for (let activeArticle of activeArticles) {
       activeArticle.classList.remove('active');
+
     }
 
     /* get 'href' attribute from the clicked link */
@@ -83,7 +84,6 @@
     }
     titleList.innerHTML = html;
   }
-
   generateTitleLinks();
 
   function generateTags() {

@@ -77,6 +77,10 @@ body {
   font-weight: bold;
 }
 
+.list a {
+  text-decoration: none;
+}
+
 .list-horizontal li {
   display: inline-block;
 }

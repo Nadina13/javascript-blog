@@ -266,7 +266,7 @@
     for(let author of authorList) {
 
       /* add authorClickHandler as event listener for that link */
-      author.addEventListener('click',authorClickHandler);
+      author.addEventListener('click', authorClickHandler);
     }
   }
   addClickListenersToAuthors();

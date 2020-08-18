@@ -172,7 +172,6 @@
     /* execute function "generateTitleLinks" with article selector as argument */
     generateTitleLinks('[data-tags~="' + tag + '"]');
   }
-  tagClickHandler();
 
   function addClickListenersToTags() {
     /* find all links to tags */
@@ -210,7 +209,6 @@
       /* add generated code to html variable */
       html += authorLinkHTML;
     }
-
     /* insert HTML of all the links into the tags wrapper */
     authorsList.innerHTML = html;
     /* END LOOP: for every article: */
@@ -253,9 +251,7 @@
 
     /* execute function "generate title links" with article selector as argument */
     generateTitleLinks('[data-author="' + authorTags + '"]');
-
   }
-  authorClickHandler();
 
   function addClickListenersToAuthors () {
 

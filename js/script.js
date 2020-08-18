@@ -215,7 +215,6 @@
     authorsList.innerHTML = html;
     /* END LOOP: for every article: */
   }
-
   generateAuthors();
 
   function authorClickHandler(event) {
@@ -270,4 +269,5 @@
       author.addEventListener('click',authorClickHandler);
     }
   }
+  addClickListenersToAuthors();
 }

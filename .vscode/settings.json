@@ -1,3 +1,4 @@
 {
-    "editor.suggest.statusBar.visible": true
+    "editor.suggest.statusBar.visible": true,
+    "problems.showCurrentInStatus": true
 }

@@ -123,3 +123,40 @@ body {
     margin: 0 10px 0 0;
   }
 }
+
+.list.tags {
+  li {
+    display: inline-flex;
+  }
+  a {
+    flex-wrap: wrap;
+  }
+    .tag-size-1 {
+    font-size: 20px;
+    color: black;
+    font-weight: 500;
+    }
+    .tag-size-2 {
+    font-size: 22px;
+    color: rgb(243, 206, 39);
+    font-weight: 600;
+    }
+    .tag-size-3 {
+    font-size: 24px;
+    color: rgb(5, 92, 44);
+    font-weight: 700;
+    }
+    .tag-size-4 {
+    font-size: 28px;
+    color: firebrick;
+    font-weight: 800;
+    }
+    .tag-size-5 {
+    font-size: 32px;
+    color: rgb(36, 12, 175);
+    font-weight: 900;
+    }
+  }
+
+
+

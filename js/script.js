@@ -48,9 +48,10 @@
     optTitleListSelector = '.titles',
     optArticleTagsSelector = '.post-tags .list',
     optArticleAuthorSelector = '.post-author',
-    optTagsListSelector = '.tags .list',
+    optTagsListSelector = '.tags.list',
     optCloudClassCount = 5,
-    optCloudClassPrefix = 'tag-size-';
+    optCloudClassPrefix = 'tag-size-',
+    optAuthorsListSelector = '.list.authors';
 
   function generateTitleLinks(customSelector = '') {
 
@@ -177,7 +178,7 @@
       /* END LOOP: for every article: */
 
       /* [NEW] find list of tags in right column */
-      const tagList = document.querySelector('.tags');
+      const tagList = document.querySelector(optTagsListSelector);
 
       /* [NEW] create variable for all links HTML code */
       let allTagsHTML = '';
@@ -259,6 +260,9 @@
 
   function generateAuthors() {
 
+    /* [NEW] create a new variable allAuthors with an empty object */
+    let allAuthors = {};
+
     /* find all articles */
     const articles = document.querySelectorAll(optArticleSelector);
 
@@ -273,12 +277,38 @@
       const authorTags = article.getAttribute('data-author');
 
       /* generate HTML of the link */
-      const authorLinkHTML = 'by <a href="#author-' + authorTags + '"><span>' + authorTags + '</span></a>';
+      const authorLinkHTML = `by <a href="#author-${authorTags}"><span>${authorTags}</span></a>`;
+
+      /* check if this link is not already in allAuthors */
+      if(!allAuthors[authorLinkHTML]){
+        allAuthors[authorLinkHTML] = 1;
+      } else {
+        allAuthors[authorLinkHTML]++;
+      }
 
       /* insert HTML of all the links into the tags wrapper */
       authorsList.innerHTML = authorLinkHTML;
       /* END LOOP: for every article: */
     }
+
+    /* find list of authors in right column */
+    const authorList = document.querySelector(optAuthorsListSelector);
+
+    /* create variable for all links HTML code */
+    let allAuthorsHTML = '';
+
+      /*start loop for each author in allAuthors */
+    for(let author in allAuthors){
+
+      /* generate code oflink and add it to allAutorsHTML */
+      const authorLink = `<li><a href="#author-${author}"><span>${author}(${allAuthors[author]})</span></a></li>`;
+      console.log(authorLink);
+
+      allAuthorsHTML += authorLink;
+      /* and loop for each author in allAuthors */
+    }
+    /*add HTML form allAuthorsHTML to authorList */
+    authorList.innerHTML = allAuthorsHTML;
   }
   generateAuthors();
 
